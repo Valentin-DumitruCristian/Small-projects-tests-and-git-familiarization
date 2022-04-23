@@ -1,5 +1,6 @@
 #bigsquare{
-background-color: chartreuse;
+position:absolute;
+background-color: rgb(179, 176, 255);
 width: 800px;
 height: 800px; 
 transition:transform 2s ease-in-out 1s;
@@ -12,7 +13,8 @@ height: 200px;
 transition:transform 2s;
 }
 #bigsquare:hover #Square1{
-    transform: translateX(200%);
+    position: relative;
+    transform: translateX(300%);
    
 }
 #Square2{ 
@@ -20,4 +22,19 @@ position: relative;
 background-color:darkorange;
 width: 200px;
 height: 200px; 
+animation: move_left_right 2s ease-in-out forwards 5 alternate-reverse;
+}
+@keyframes move_left_right {
+    0% {
+        transform:translateY(0%)
+    }
+    33%{
+        transform:translateX(300%)
+    }
+    66%{
+        transform:translateX(300%) translateY(200%)
+    }
+    100% {
+        transform: translateY(200%);
+    }
 }
